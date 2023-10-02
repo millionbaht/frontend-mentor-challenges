@@ -34,4 +34,4 @@
 If you have any questions, suggestions, or feedback related to this project, please feel free to reach out. You can contact me through the following channels:
 
 - Email: [millionbahtt@gmail.com](mailto:millionbahtt@gmail.com)
-- GitHub Issues: [Frontend-Menthor-Challenges](https://github.com/millionbaht/frontend-mentor-challenges/issues)
+- GitHub Issues: [Frontend-Mentor-Challenges](https://github.com/millionbaht/frontend-mentor-challenges/issues)
