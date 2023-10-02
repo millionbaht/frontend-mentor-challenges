@@ -3,7 +3,7 @@
 
 ## 📃 - Completed Challenges
 
-<div>
+<div style="width:100%">
     <table>
         <thead>
             <tr>
