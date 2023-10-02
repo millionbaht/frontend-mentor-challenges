@@ -15,7 +15,7 @@
         <tbody>
             <tr>
                 <td>QR Code Component</td>
-                <td><a href="https://github.com/millionbaht/frontend-menthor-challenges/qr-code-component/">GitHub Repository</a></td>
+                <td><a href="https://github.com/millionbaht/frontend-menthor-challenges/tree/main/qr-code-component/">GitHub Repository</a></td>
                 <td><a href="https://millionbaht.github.io/frontend-menthor-challenges/qr-code-component/">Live Demo</a></td>
             </tr>
         </tbody>
