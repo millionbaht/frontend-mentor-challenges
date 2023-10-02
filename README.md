@@ -20,6 +20,12 @@
                 <td><a href="https://github.com/millionbaht/frontend-mentor-challenges/tree/main/qr-code-component/">GitHub Repository</a></td>
                 <td><a href="https://millionbaht.github.io/frontend-mentor-challenges/qr-code-component/">Live Demo</a></td>
             </tr>
+            <tr>
+                <td>Results Summary Component</td>
+                <td>Newbie</td>
+                <td><a href="https://github.com/millionbaht/frontend-mentor-challenges/tree/main/results-summary-component/">Github Repository</a></td>
+                <td><a href="https://millionbaht.github.io/frontend-mentor-challenges/results-summary-component/">Live Demo</a></td>
+            </tr>
         </tbody>
     </table>
 </div>
