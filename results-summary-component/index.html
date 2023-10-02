@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Frontend Mentor | Results Summary Component</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,700;0,800;1,500&display=swap');
+
+		:root {
+			/* Primary */
+			--light-red: hsl(0, 100%, 67%);
+			--orangey-yellow: hsl(39, 100%, 56%);
+			--green-teal: hsl(166, 100%, 37%);
+			--cobalt-blue: hsl(234, 85%, 45%);
+
+			/* Gradients */
+			--light-slate-blue-bg: hsl(252, 100%, 67%);
+			--light-royal-blue-bg: hsl(241, 81%, 54%);
+
+			--violet-blue-circle: hsla(256, 72%, 46%, 1);
+			--persian-blue-circle: hsla(241, 72%, 46%, 0);
+		
+			/* Neutral */
+			--white: hsl(0, 0%, 100%);
+			--pale-blue: hsl(221, 100%, 96%);
+			--light-lavender: hsl(241, 100%, 89%);
+			--dark-gray-blue: hsl(224, 30%, 27%);
+
+			/* Font Family*/
+			--font-family: 'Hanken Grotesk', sans-serif;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: var(--font-family);
+		}
+
+		body, html {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--white);
+		}
+
+		.card {
+			width: 650px;
+			border-radius: 2rem;
+			box-shadow: 5px 10px 20px var(--pale-blue);
+		}
+
+		.card .container {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.card .container .result {
+			flex: 1;
+			text-align: center;
+			padding: 2rem 3rem;
+			border-radius: 2rem;
+			background: linear-gradient(to bottom, var(--light-slate-blue-bg), var(--light-royal-blue-bg));
+		}
+
+		.card .container .result h2 {
+			color: var(--light-lavender);
+		}
+
+		.card .container .result h1 {
+			color: var(--white);
+		}
+
+		.card .container .result p {
+			margin-top: 1rem;
+			color: var(--light-lavender);
+		}
+
+		.card .container .result .circle {
+			width: 180px;
+			height: 180px;
+			display: flex;
+			margin: 2rem auto;
+			align-items: center;
+			border-radius: 100%;
+			flex-direction: column;
+			justify-content: center;
+			background: linear-gradient(to bottom, var(--violet-blue-circle), var(--persian-blue-circle));
+		}
+
+		.card .container .result .circle h1 {
+			font-size: 4rem;
+			color: var(--white);
+		}
+
+		.card .container .result .circle p {
+			color: var(--light-lavender);
+		}
+
+		.card .container .summary {
+			flex: 1;
+			padding: 2rem;
+		}
+
+		.card .container .summary button {
+			width: 100%;
+			padding: 1rem 0;
+			cursor: pointer;
+			margin-top: 2rem;
+			color: var(--white);
+			border-radius: 50px;
+			background-color: var(--dark-gray-blue);
+		}
+
+		.card .container .summary .row .box {
+			display: flex;
+			margin-top: 0.8rem;
+			border-radius: 8px;
+			align-items: center;
+			padding: 1rem 0.8rem;
+			justify-content: space-between;
+		}
+
+		.card .container .summary .row .box p span {
+			color: var(--dark-gray-blue);
+		}
+
+		.card .container .summary .row .box .badge {
+			display: flex;
+			align-items: center;
+		}
+
+		.card .container .summary .row .box .badge b {
+			margin-left: 0.5rem;
+		}
+
+		.card .container .summary .row .box:nth-child(1) {
+			margin-top: 1.5rem;
+			background: hsla(0, 100%, 67%, 0.1);
+
+			& b {
+				color: var(--light-red);
+			}
+		}
+
+		.card .container .summary .row .box:nth-child(2) {
+			background: hsla(39, 100%, 56%, 0.1);
+
+			& b {
+				color: var(--orangey-yellow);
+			}
+		}
+
+		.card .container .summary .row .box:nth-child(3) {
+			background: hsla(166, 100%, 37%, 0.1);
+
+			& b {
+				color: var(--green-teal);
+			}
+		}
+
+		.card .container .summary .row .box:nth-child(4) {
+			background: hsla(234, 85%, 45%, 0.1);
+
+			& b {
+				color: var(--cobalt-blue);
+			}
+		}
+
+		@media screen and (max-width: 650px) {
+			body, html {
+				align-items: flex-start;
+			}
+
+			.card {
+				box-shadow: none;
+			}
+
+			.card .container {
+				display: block;
+			}
+
+			.card .container .result {
+				border-radius: 0 0 1rem 1rem;
+			}
+
+			.card .container .result {
+				width: 100%;
+			}
+
+			.card .container .summary {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="card">
+		<div class="container">
+			<div class="result">
+				<h2>Your Result</h2>
+				<div class="circle">
+					<h1>76</h1>
+					<p>of 100</p>
+				</div>
+				<h1>Great</h1>
+				<p>You scored higher than 65% of the people who have taken these tests.</p>
+			</div>
+			<div class="summary">
+				<h3>Summary</h3>
+				<div class="row" id="row-data"></div>
+				<button>Continue</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		const data = [
+			{ "category": "Reaction", "score": 80, "icon": "./assets/images/icon-reaction.svg" },
+			{ "category": "Memory", "score": 92, "icon": "./assets/images/icon-memory.svg" },
+			{ "category": "Verbal", "score": 61, "icon": "./assets/images/icon-verbal.svg" },
+			{ "category": "Visual", "score": 72, "icon": "./assets/images/icon-visual.svg" }
+		];
+
+		document.getElementById('row-data').innerHTML = data.map(item => `
+		    <div class="box">
+		        <div class="badge">
+		            <img src="${item.icon}">
+		            <b>${item.category}</b>
+		        </div>
+		        <p>${item.score} <span>/ 100</span></p>
+		    </div>
+		`).join('');
+	</script>
+</body>
+</html>
