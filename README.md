@@ -8,6 +8,7 @@
         <thead>
             <tr>
                 <th>Challenge Name</th>
+                <th>Difficulty</th>
                 <th>Repository Link</th>
                 <th>Live Demo</th>
             </tr>
@@ -15,6 +16,7 @@
         <tbody>
             <tr>
                 <td>QR Code Component</td>
+                <td>Newbie</td>
                 <td><a href="https://github.com/millionbaht/frontend-menthor-challenges/tree/main/qr-code-component/">GitHub Repository</a></td>
                 <td><a href="https://millionbaht.github.io/frontend-menthor-challenges/qr-code-component/">Live Demo</a></td>
             </tr>
