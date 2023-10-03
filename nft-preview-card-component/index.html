@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Frontend Mentor | NFT Preview Card Component</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+		:root {
+			/*
+				Primary
+			*/
+			--color-soft-blue: hsl(215, 51%, 70%);
+			--color-cyan: hsl(178, 100%, 50%);
+			/*
+				Neutral
+			*/
+			--color-very-dark-blue-bg: hsl(217, 54%, 11%);
+			--color-very-dark-blue-card-bg: hsl(216, 50%, 16%);
+			--color-very-dark-blue-line: hsl(215, 32%, 27%);
+			--color-white: hsl(0, 0%, 100%);
+			/*
+				Font Family
+			*/
+			--font-outfit: 'Outfit', sans-serif;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: var(--font-outfit);
+		}
+
+		main {
+			width: 100%;
+			display: flex;
+			min-height: 100vh;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--color-very-dark-blue-bg);
+		}
+
+		.card {
+			width: 350px;
+			padding: 1.5rem;
+			overflow: hidden;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			border-radius: 20px;
+			background-color: var(--color-very-dark-blue-card-bg);
+		}
+
+		.card .card-image {
+		  	width: 100%;
+		  	height: 300px;
+		  	display: flex;
+		  	cursor: pointer;
+		  	overflow: hidden;
+		  	position: relative;
+		  	align-items: center;
+		  	border-radius: 10px;
+		  	justify-content: center;
+		  	background: url('./images/image-equilibrium.jpg') no-repeat center/cover;
+		}
+
+		.card .card-image .card-overlay {
+			opacity: 0;
+			transition: background 300ms ease;
+		}
+
+		.card .card-image:hover .card-overlay {
+			opacity: 1;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: hsla(178, 100%, 50%, 0.5);
+		}
+
+		.card > h1 {
+			margin-top: 1.5rem;
+			font-size: 1.4rem;
+			color: var(--color-white);
+			transition: all 300ms ease-out;
+		}
+
+		.card > h1:hover {
+			cursor: pointer;
+			color: var(--color-cyan);
+		}
+
+		.card > p {
+			font-size: 18px;
+			margin-top: 1rem;
+			font-weight: 200;
+			line-height: 26px;
+			color: var(--color-soft-blue);
+		}
+
+		.card .row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.card .row div {
+			gap: 0.5rem;
+			display: flex;
+			padding: 1.5rem 0;
+			align-items: center;
+		}
+
+		.card .row .ethereum b {
+			color: var(--color-cyan);
+		}
+
+		.card .row .clock b {
+			color: var(--color-soft-blue);
+		}
+
+		.card > hr {
+			border: 0;
+			width: 100%;
+			height: 0.5px;
+			background-color: var(--color-very-dark-blue-line);
+		}
+
+		.card .profile {
+			display: flex;
+			padding: 1rem 0 0.5rem 0;
+			align-items: center;
+		}
+
+		.card .profile img {
+			width: 33px;
+			height: 33px;
+			border-radius: 100%;
+			border: 1px solid var(--color-white);
+		}
+
+		.card .profile p {
+			margin-left: 1rem;
+			color: var(--color-soft-blue);
+		}
+
+		.card .profile p span {
+			color: var(--color-white);
+			transition: all 300ms ease-out;
+		}
+
+		.card .profile p span:hover {
+			cursor: pointer;
+			color: var(--color-cyan);
+		}
+
+		@media screen and (max-width: 350px) {
+			main {
+				padding: 0.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<div class="card">
+			<div class="card-image">
+				<div class="card-overlay">
+					<img src="./images/icon-view.svg">
+				</div>
+			</div>
+			<h1>Equilibrium #3429</h1>
+			<p>Our Equilibrium collection promotes balance and calm.</p>
+			<div class="row">
+				<div class="ethereum">
+					<img src="./images/icon-ethereum.svg">
+					<b>0.041 ETH</b>
+				</div>
+				<div class="clock">
+					<img src="./images/icon-clock.svg">
+					<b>3 days left</b>
+				</div>
+			</div>
+			<hr>
+			<div class="profile">
+				<img src="./images/image-avatar.png">
+				<p>Creation of <span>Jules Wyvern</span></p>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
