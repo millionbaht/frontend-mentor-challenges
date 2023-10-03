@@ -5,235 +5,282 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Frontend Mentor | Results Summary Component</title>
 	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,700;0,800;1,500&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
 
 		:root {
-			/* Primary */
-			--light-red: hsl(0, 100%, 67%);
-			--orangey-yellow: hsl(39, 100%, 56%);
-			--green-teal: hsl(166, 100%, 37%);
-			--cobalt-blue: hsl(234, 85%, 45%);
+			/*
+				Primary
+			*/
+			--color-light-red: hsl(0, 100%, 67%);
+			--color-orangey-yellow: hsl(39, 100%, 56%);
+			--color-green-teal: hsl(166, 100%, 37%);
+			--color-cobalt-blue: hsl(234, 85%, 45%);
+			/*
+				Gradients
+			*/
+			--color-light-slate-blue-bg: hsl(252, 100%, 67%);
+			--color-light-royal-blue-bg: hsl(241, 81%, 54%);
 
-			/* Gradients */
-			--light-slate-blue-bg: hsl(252, 100%, 67%);
-			--light-royal-blue-bg: hsl(241, 81%, 54%);
-
-			--violet-blue-circle: hsla(256, 72%, 46%, 1);
-			--persian-blue-circle: hsla(241, 72%, 46%, 0);
-		
-			/* Neutral */
-			--white: hsl(0, 0%, 100%);
-			--pale-blue: hsl(221, 100%, 96%);
-			--light-lavender: hsl(241, 100%, 89%);
-			--dark-gray-blue: hsl(224, 30%, 27%);
-
-			/* Font Family*/
-			--font-family: 'Hanken Grotesk', sans-serif;
+			--color-violet-blue-circle: hsla(256, 72%, 46%, 1);
+			--color-persian-blue-circle: hsla(241, 72%, 46%, 0);
+			/*
+				Neutral
+			*/
+			--color-white: hsl(0, 0%, 100%);
+			--color-pale-blue: hsl(221, 100%, 96%);
+			--color-light-lavender: hsl(241, 100%, 89%);
+			--color-dark-gray-blue: hsl(224, 30%, 27%);
+			/*
+				Font Family
+			*/
+			--font-haken-grotesk: 'Hanken Grotesk', sans-serif;
 		}
 
 		* {
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
-			font-family: var(--font-family);
+			font-family: var(--font-haken-grotesk);
 		}
 
-		body, html {
+		main {
 			width: 100%;
-			height: 100vh;
 			display: flex;
+			min-height: 100vh;
 			align-items: center;
 			justify-content: center;
-			background-color: var(--white);
+			background-color: var(--color-white);
 		}
 
 		.card {
-			width: 650px;
-			border-radius: 2rem;
-			box-shadow: 5px 10px 20px var(--pale-blue);
+			width: 737px;
+			height: auto;
+			overflow: hidden;
+			border-radius: 30px;
+			background-color: var(--color-white);
+			box-shadow: 5px 10px 25px var(--color-pale-blue);
 		}
 
-		.card .container {
+		.card .row {
 			display: flex;
-			justify-content: space-between;
 		}
 
-		.card .container .result {
-			flex: 1;
+		.card .row .result {
+			width: 50%;
+			padding: 2rem;
+			border-radius: 40px;
 			text-align: center;
-			padding: 2rem 3rem;
-			border-radius: 2rem;
-			background: linear-gradient(to bottom, var(--light-slate-blue-bg), var(--light-royal-blue-bg));
+			background: linear-gradient(to bottom, var(--color-light-slate-blue-bg), var(--color-light-royal-blue-bg));
 		}
 
-		.card .container .result h2 {
-			color: var(--light-lavender);
+		.card .row .result h2 {
+			color: var(--color-light-lavender);
 		}
 
-		.card .container .result h1 {
-			color: var(--white);
-		}
-
-		.card .container .result p {
-			margin-top: 1rem;
-			color: var(--light-lavender);
-		}
-
-		.card .container .result .circle {
-			width: 180px;
-			height: 180px;
+		.card .row .result .circle {
+			width: 200px;
+			height: 200px;
 			display: flex;
 			margin: 2rem auto;
 			align-items: center;
 			border-radius: 100%;
 			flex-direction: column;
 			justify-content: center;
-			background: linear-gradient(to bottom, var(--violet-blue-circle), var(--persian-blue-circle));
+			background: linear-gradient(to bottom, var(--color-violet-blue-circle), var(--color-persian-blue-circle));
 		}
 
-		.card .container .result .circle h1 {
-			font-size: 4rem;
-			color: var(--white);
+		.card .row .result .circle h1 {
+			font-size: 4em;
+			color: var(--color-white);
 		}
 
-		.card .container .result .circle p {
-			color: var(--light-lavender);
+		.card .row .result .circle b {
+			color: var(--color-light-lavender);
+			opacity: 0.5;
 		}
 
-		.card .container .summary {
-			flex: 1;
-			padding: 2rem;
+		.card .row .result .result-content {
+			padding: 0 2.5rem;
 		}
 
-		.card .container .summary button {
-			width: 100%;
-			border: none;
-			padding: 1rem 0;
-			cursor: pointer;
-			margin-top: 2rem;
-			color: var(--white);
-			border-radius: 50px;
-			background-color: var(--dark-gray-blue);
+		.card .row .result .result-content h1 {
+			color: var(--color-white);
 		}
 
-		.card .container .summary .row .box {
+		.card .row .result .result-content p {
+			margin: 1rem 0;
+			color: var(--color-light-lavender);
+		}
+
+		.card .row .summary {
+			width: 50%;
+			padding: 2.5rem;
+		}
+
+		.card .row .summary h2 {
+			color: var(--color-dark-gray-blue);
+		}
+
+		.card .row .summary .columns {
+			gap: 1rem;
 			display: flex;
-			margin-top: 0.8rem;
-			border-radius: 8px;
+			margin-top: 1.5rem;
+			flex-direction: column;
+		}
+
+		.card .row .summary .columns .box-content {
+			display: flex;
+			padding: 1rem;
+			font-weight: 600;
 			align-items: center;
-			padding: 1rem 0.8rem;
+			border-radius: 10px;
 			justify-content: space-between;
 		}
 
-		.card .container .summary .row .box p span {
-			color: var(--dark-gray-blue);
+		.card .row .summary .columns .box .box-icon b {
+			color: var(--color-light-red);
 		}
 
-		.card .container .summary .row .box .badge {
+		.card .row .summary .columns .box .box-score b span {
+			color: var(--color-dark-gray-blue);
+		}
+
+		.card .row .summary .columns .box:nth-child(1) {
+			background-color: hsla(0, 100%, 67%, 0.1);
+		}
+
+		.card .row .summary .columns .box .box-icon {
+			gap: 0.5rem;
 			display: flex;
 			align-items: center;
 		}
 
-		.card .container .summary .row .box .badge b {
-			margin-left: 0.5rem;
+		.card .row .summary .columns .box:nth-child(2) {
+			background-color: hsla(39, 100%, 56%, 0.1);
 		}
 
-		.card .container .summary .row .box:nth-child(1) {
-			margin-top: 1.5rem;
-			background: hsla(0, 100%, 67%, 0.1);
-
-			& b {
-				color: var(--light-red);
-			}
+		.card .row .summary .columns .box:nth-child(2) .box-icon p {
+			color: var(--color-orangey-yellow);
 		}
 
-		.card .container .summary .row .box:nth-child(2) {
-			background: hsla(39, 100%, 56%, 0.1);
-
-			& b {
-				color: var(--orangey-yellow);
-			}
+		.card .row .summary .columns .box:nth-child(3) {
+			background-color: hsla(166, 100%, 37%, 0.1);
 		}
 
-		.card .container .summary .row .box:nth-child(3) {
-			background: hsla(166, 100%, 37%, 0.1);
-
-			& b {
-				color: var(--green-teal);
-			}
+		.card .row .summary .columns .box:nth-child(3) .box-icon p {
+			color: var(--color-green-teal);
 		}
 
-		.card .container .summary .row .box:nth-child(4) {
-			background: hsla(234, 85%, 45%, 0.1);
-
-			& b {
-				color: var(--cobalt-blue);
-			}
+		.card .row .summary .columns .box:nth-child(4) {
+			background-color: hsla(234, 85%, 45%, 0.1);
 		}
 
-		@media screen and (max-width: 650px) {
-			body, html {
+		.card .row .summary .columns .box:nth-child(4) .box-icon p {
+			color: var(--color-cobalt-blue);
+		}
+
+		.card .row .summary button {
+			width: 100%;
+			border: none;
+			margin-top: 2rem;
+			font-size: 1rem;
+			cursor: pointer;
+			padding: 1rem 0;
+			font-weight: 600;
+			border-radius: 30px;
+			color: var(--color-white);
+			background-color: var(--color-dark-gray-blue);
+		}
+
+		.card .row .summary button:hover {
+			background: linear-gradient(to bottom, var(--color-light-slate-blue-bg), var(--color-light-royal-blue-bg));
+		}
+
+		@media screen and (max-width: 737px) {
+			main {
 				align-items: flex-start;
 			}
 
 			.card {
-				box-shadow: none;
-			}
-
-			.card .container {
-				display: block;
-			}
-
-			.card .container .result {
-				border-radius: 0 0 1rem 1rem;
-			}
-
-			.card .container .result {
 				width: 100%;
+				box-shadow: none;
+				border-radius: 0 0 30px 30px;
 			}
 
-			.card .container .summary {
+			.card .row {
+				flex-direction: column;
+			}
+
+			.card .row .result {
+				width: 100%;
+				border-radius: 0 0 30px 30px;
+			}
+
+			.card .row .summary {
 				width: 100%;
 			}
 		}
 	</style>
 </head>
 <body>
-	<div class="card">
-		<div class="container">
-			<div class="result">
-				<h2>Your Result</h2>
-				<div class="circle">
-					<h1>76</h1>
-					<p>of 100</p>
+	<main>
+		<div class="card">
+			<div class="row">
+				<div class="result">
+					<h2>Your Result</h2>
+					<div class="circle">
+						<h1>76</h1>
+						<b>of 100</b>
+					</div>
+					<div class="result-content">
+						<h1>Great</h1>
+						<p>You scored higher than 65% of the people who have taken these tests.</p>
+					</div>
 				</div>
-				<h1>Great</h1>
-				<p>You scored higher than 65% of the people who have taken these tests.</p>
-			</div>
-			<div class="summary">
-				<h3>Summary</h3>
-				<div class="row" id="row-data"></div>
-				<button>Continue</button>
+				<div class="summary">
+					<h2>Summary</h2>
+					<div class="columns">
+						<div class="box box-content">
+							<div class="box-icon">
+								<img src="./images/icon-reaction.svg">
+								<b>Reaction</b>
+							</div>
+							<div class="box-score">
+								<b>80 <span>/ 100</span></b>
+							</div>
+						</div>
+						<div class="box box-content">
+							<div class="box-icon">
+								<img src="./images/icon-memory.svg">
+								<p>Memory</p>
+							</div>
+							<div class="box-score">
+								<b>92 <span>/ 100</span></b>
+							</div>
+						</div>
+						<div class="box box-content">
+							<div class="box-icon">
+								<img src="./images/icon-verbal.svg">
+								<p>Verbal</p>
+							</div>
+							<div class="box-score">
+								<b>61 <span>/ 100</span></b>
+							</div>
+						</div>
+						<div class="box box-content">
+							<div class="box-icon">
+								<img src="./images/icon-visual.svg">
+								<p>Visual</p>
+							</div>
+							<div class="box-score">
+								<b>72 <span>/ 100</span></b>
+							</div>
+						</div>
+					</div>
+					<button>Continue</button>
+				</div>
 			</div>
 		</div>
-	</div>
-	<script>
-		const data = [
-			{ "category": "Reaction", "score": 80, "icon": "./assets/images/icon-reaction.svg" },
-			{ "category": "Memory", "score": 92, "icon": "./assets/images/icon-memory.svg" },
-			{ "category": "Verbal", "score": 61, "icon": "./assets/images/icon-verbal.svg" },
-			{ "category": "Visual", "score": 72, "icon": "./assets/images/icon-visual.svg" }
-		];
-
-		document.getElementById('row-data').innerHTML = data.map(item => `
-		    <div class="box">
-		        <div class="badge">
-		            <img src="${item.icon}">
-		            <b>${item.category}</b>
-		        </div>
-		        <p>${item.score} <span>/ 100</span></p>
-		    </div>
-		`).join('');
-	</script>
+	</main>
 </body>
 </html>
