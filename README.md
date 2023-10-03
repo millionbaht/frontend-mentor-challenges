@@ -32,6 +32,12 @@
                 <td><a href="https://github.com/millionbaht/frontend-mentor-challenges/tree/main/product-preview-card-component/">Github Repository</a></td>
                 <td><a href="https://millionbaht.github.io/frontend-mentor-challenges/product-preview-card-component/">Live Demo</a></td>
             </tr>
+            <tr>
+                <td>NFT Preview Card Component</td>
+                <td>Newbie</td>
+                <td><a href="https://github.com/millionbaht/frontend-mentor-challenges/tree/main/nft-preview-card-component/">Github Repository</a></td>
+                <td><a href="https://millionbaht.github.io/frontend-mentor-challenges/nft-preview-card-component/">Live Demo</a></td>
+            </tr>
         </tbody>
     </table>
 </div>
